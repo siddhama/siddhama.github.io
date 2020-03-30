@@ -1169,7 +1169,7 @@ input[type='checkbox'] {
 /**********************************/
 .lightbox-basic {
 	position: relative;
-	max-width: 46.875rem;
+	max-width: 60.875rem;
 	margin: 2.5rem auto;
 	padding: 3rem 1rem;
 	border-radius: 0.25rem;
