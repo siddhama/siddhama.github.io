@@ -1145,6 +1145,9 @@ input[type='checkbox'] {
 /*************************/
 /*     10. Details 2     */
 /*************************/
+ .guidelines{
+        color:white;
+     } 
 .basic-3 {
 	padding-top: 3.5rem;
 	padding-bottom: 7.25rem;
