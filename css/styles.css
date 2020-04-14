@@ -1018,11 +1018,31 @@ input[type='checkbox'] {
 /*********************/
 /*     07. Video     */
 /*********************/
+
+.iframe-container iframe { 
+    padding:20px;
+    width: 50%; 
+    height:400px;  
+    float:left;
+
+}
+@media screen and (max-width: 400px) {
+   .iframe-container iframe { 
+    float: none;
+    margin-right:0;
+    width:auto;
+      
+  }
+}
+
+
+
 .basic-1 {
 	padding-top: 6.375rem;
 	padding-bottom: 6.875rem;
 	background:  center center no-repeat;
 	background-size: cover; 
+	overflow:auto;
 }
 
 .basic-1 h2 {
