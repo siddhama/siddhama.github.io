@@ -749,7 +749,7 @@ input[type='checkbox'] {
 
 .navbar-custom .navbar-toggler {
 	border: none;
-	color: #fff;
+	color: red;
 	font-size: 2rem;
 }
 
