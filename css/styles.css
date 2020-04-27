@@ -808,7 +808,7 @@ input[type='checkbox'] {
 
 
 /****************************/
-/*     05. Testimonials     */
+/*     05. Team     */
 /****************************/
 .slider-1 {
 	padding-top: 6.875rem;
@@ -860,7 +860,7 @@ input[type='checkbox'] {
 	margin-right: auto;
 	margin-bottom: 0.25rem;
 	margin-left: auto;
-	border-radius: 50%;
+	border-radius: 25%;
 }
 
 .slider-1 .card-body {
