@@ -34,32 +34,6 @@ html {
 	height: 100%;
 
 }
-.faq .panel-title > a::before {
-    float: right !important;
-    font-family: "Font Awesome 5 Free";
-    content: "\f068";
-    padding-right: 5px;
-}
-.faq .panel-title > a.collapsed::before {
-    float: right !important;
-    content: "\f067";
-}
-.faq h2 {
-    color: #ff9800;
-}
-.faq a {
-    text-decoration: none;
-    display: block;
-}
-
-.faq .panel-default>.panel-heading {
-    background-color: transparent;
-    border: none;
-}
-
-.faq .panel-default {
-    border-color: transparent;
-}
 
 body, p {
 	color: #f1f1f8; 
@@ -150,8 +124,8 @@ a.white {
 	padding: 1.1875rem 2.125rem 1.1875rem 2.125rem;
 	border: 0.125rem solid #00c9db;
 	border-radius: 2rem;
-	background-color: #00c9db;
-	color: #fff;
+	/*background-color: #00c9db;*/
+	color: #00c9db;
 	font: 700 0.75rem/0 "Montserrat", sans-serif;
 	text-decoration: none;
 	transition: all 0.2s;
@@ -2150,6 +2124,44 @@ a:hover.back-to-top {
 /* end of min-width width 1200px */
 
 /* Custom Styles Added */
+.faq{
+padding-left:40px;
+}
+.faq .collapsible {
+      background-color: #000;
+      color: #fff;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 20px;
+  }
+  .faq .active, .collapsible:hover {
+      background-color: #000;
+  }
+
+  .faq .collapsible:after {
+      content: '\002B';
+      color: white;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+  }
+
+  .faq .active:after {
+      content: "\2212";
+  }
+
+  .faq .content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      text-align: left;
+      transition: max-height 0.2s ease-out;
+      background-color: #000;
+  }
 .ridebox {
 	cursor: pointer;
 	height: 250px;
@@ -2311,7 +2323,7 @@ a:hover.back-to-top {
 }
 /* height=400*Number of Rides*/
 #ridecont{
-	height:4000px;
+	/*height:4000px;*/
 }
 @media (max-width:775px){
 	.ridegrid{
@@ -2432,20 +2444,20 @@ a:hover.back-to-top {
 		padding:30px 10px;
 	}
 	.rideimg,.ridebox .fadedbox{
-		margin-left:30%;
+		/*margin-left:30%;*/
 	}
 	/*Height=725*Number of Rides*/
 	#ridecont{
-		height:7250px;
+		/*height:7250px;*/
 	}
 }
 @media (max-width:500px){
 	.rideimg,.ridebox .fadedbox{
-		margin-left:20%;
+		/*margin-left:20%;*/
 	}
 }
 @media (max-width:440px){
 	.rideimg,.ridebox .fadedbox{
-		margin-left:10%;
+		/*margin-left:10%;*/
 	}
 }
