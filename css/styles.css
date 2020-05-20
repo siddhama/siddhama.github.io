@@ -118,7 +118,9 @@ a.white {
 .testimonial-author {
 	font: 700 1rem/1.5rem "Montserrat", sans-serif;
 }
-
+.testimonial-desig {
+	font: 400 1rem/1.5rem "Montserrat", sans-serif;
+}
 .btn-solid-reg {
 	display: inline-block;
 	padding: 1.1875rem 2.125rem 1.1875rem 2.125rem;
@@ -844,7 +846,9 @@ input[type='checkbox'] {
 .slider-1 .testimonial-author {
 	margin-bottom: 0;
 }
-
+.slider-1 .testimonial-desig {
+	margin-bottom: 0;
+}
 
 /************************/
 /*     05. Features     */
