@@ -2484,3 +2484,21 @@ div.desc {
   padding: 15px;
   text-align: center;
 }
+.card-overlay {
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+.ridebox-2{
+    margin-left:60px;
+    margin-bottom: 40px !important;
+}
+@media only screen and (max-width: 992px) {
+    .reversecol {
+        display:flex;
+        flex-direction: column-reverse;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .ridebox-2{
+        margin-left:8px;
+    }
+}
