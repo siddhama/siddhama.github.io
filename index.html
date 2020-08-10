@@ -60,7 +60,7 @@
                         <a class="nav-link page-scroll" href="index.html" style="color:red;">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#about" style="color:red;">ABOUT MTB</a>
+                        <a class="nav-link page-scroll" href="about.html" style="color:red;">ABOUT MTB</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="pastrides.html" style="color:red;">PAST RIDES</a>
@@ -94,7 +94,19 @@
         <!-- end of navbar -->
         <!-- end of navbar -->
         <!-- Header -->
-        <header id="header" class="header"  style="background-image: url('images/unnamed.jpg');background-attachment: fixed;">
+        <style>
+            .header{
+                background-position: top 10px;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            @media only screen and (max-width: 455px) {
+                .header{
+                    background-position: -300px;
+                }
+            } 
+        </style>
+        <header id="header" class="header img-responsive"  style="background-image: url('images/bg/mtb4.jpg');background-attachment: fixed;">
             <div class="card-overlay">
                 <div class="header-content" style='height:800px;'>
                     <div class="container">
@@ -108,7 +120,7 @@
                             <!-- end of col -->
                             <div class="col-lg-6">
                                 <div class="image-container">
-                                    <img class="img-fluid" src="images/MTBlogo.png" alt="alternative">
+                                    <img class="img-fluid" src="#" alt="">
                                 </div>
                                 <!-- end of image-container -->
                             </div>
@@ -126,7 +138,7 @@
         <!-- About -->
         <div id="about" class="tabs">
             <div class="container">
-                <h2 style="text-align: center !important;">ABOUT</h2>
+                <h2 style="text-align: center !important;">ABOUT US</h2>
                 <div class="row justify-content-centre">
                     <div class="container">
                         <div class="row justify-content-centre">
