@@ -12,7 +12,7 @@ var images = [];
 }
 $(document).ready(function(){
   $(".header").onload(function(){
-    $("header").fadeOut(1000);
+    $("header").fadeOut(1000); 
   });
   $(".header").onload(function(){
     $("header").fadeIn(1000);
@@ -22,4 +22,4 @@ var slider = setInterval(function() {
   document.getElementsByClassName('header')[0].setAttribute('style', 'background-image: url("'+images[0]+'")');
   images.splice(images.length, 0, images[0]);
   images.splice(0, 1);
-}, 2000);
+}, 1998);
