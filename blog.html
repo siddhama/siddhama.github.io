@@ -72,9 +72,6 @@
                         <a class="nav-link page-scroll" href="#" style="color:red;">BLOGS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.html#faq" style="color:red;">FAQ</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link page-scroll" href="resources.html" style="color:red;">RESOURCES</a>
                     </li>
                     <li class="nav-item">
@@ -101,11 +98,13 @@
                 background-position: 60% -30%; 
             }
         </style>
-        <header id="header" class="header"  style="background-image: url('images/blog.jpg');clear:both !important;height:100%;">
+        <header id="header" class="header"  style="background-image: url('images/bg/prasher3.jpg');clear:both !important;height:100%;">
             <div class="card-overlay" ;>
                 <!-- end of header-content -->
             </div>
         </header>
+        <div id="example1"></div>
+        <script>PDFObject.embed("blogs/barf_k_phiye_2016 version.pdf", "#example1");</script>
         <!-- end of header -->
         <div id="details" class="basic-2" style="background:white; margin:20px 3% !important;" >
             <h2 style="color:black"> बर्फ के पहिए <h2><h4 style="color:#333333"><i>&nbsp;&nbsp;-Abhishek Singh Kulhadiya<i></h4>
@@ -113,7 +112,11 @@
                 <p style="color:black">This browser does not support PDFs. Please download the PDF to view it: 
                 <a href="blogs/barf_k_phiye_2016 version.pdf">Download PDF</a>.</p>
             </object>
+            
+            
+
         </div>
+        
 
         <div class="copyright">
             <div class="container">
@@ -128,6 +131,7 @@
             <!-- end of container -->
         </div>
         <!-- Scripts -->
+        <script src="/js/pdfobject.js"></script>
         <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
         <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
         <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
