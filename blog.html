@@ -92,32 +92,30 @@
       <!-- end of navbar -->
       <!-- Header -->
       <style media="screen">
-         #the-canvas {
-         border: 1px solid black;
-         direction: ltr;
-         }
-         .header {
-         background-repeat: no-repeat;
-         background-size: cover;
-         background-position: 60% -30%; 
-         }
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 10% -30%; 
+        background-attachment: fixed;
+        canvas {
+        border: 1px solid black;
+        direction: ltr;
+    }
       </style>
-      <header id="header" class="header"  style="background-image: url('images/bg/prasher3.jpg');clear:both !important;height:100%;">
-         <div class="card-overlay" ;>
-            <!-- end of header-content -->
-         </div>
-      </header>
-      <style type="text/css">
-         #the-canvas {
-         border: 1px solid black;
-         direction: ltr;
-         }
-      </style>
-      <div id="pdf-container">
-         <canvas id="the-canvas" src="blogs/barf_k_phiye_2016 version.pdf"></canvas>
+      <header id="header" class="header"  style="background-image: url('images/bg/prasher3.jpg');background-attachment: fixed;clear:both !important;height:100%">
+            <div class="card-overlay" style="height:100%;">
+                <div class="header-content">           
+                    <h1 style="position:absolute;bottom:20%; left:30% ;">BLOGS </h1>              
+                </div>
+                <!-- end of header-content -->
+            </div>
+        </header>
+      
+      <div id="pdf-container" style="margin: 30px 5%;">
+        <h2 style="color:black"> बर्फ के पहिए <h2><h4 style="color:#333333"><i>&nbsp;&nbsp;-Abhishek Singh Kulhadiya<i></h4>
+         <canvas id="the-canvas" src="blogs/barf_k_phiye_2016 version.pdf";"></canvas>
          <div>
-            <button id="prev">Previous</button>
-            <button id="next">Next</button>
+            <button id="prev">Previous Page</button>
+            <button id="next">Next Page </button>
             &nbsp; &nbsp;
             <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
          </div>
@@ -223,6 +221,8 @@
          renderPage(pageNum);
          });
       </script>
+      <embed src="https://drive.google.com/viewerng/
+viewer?embedded=true&url=blogs/barf_k_phiye_2016 version.pdf" width="500" height="375">
       <div class="copyright">
          <div class="container">
             <div class="row">
