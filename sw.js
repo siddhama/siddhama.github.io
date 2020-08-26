@@ -27,7 +27,7 @@ async function installServiceWorker() {
         'js/swiper.min.js',
         'js/validator.min.js',
         'js/popper.min.js',
-        'js/morphtext.min.js',
+        'js/morphext.min.js',
         'js/jquery.min.js',
         'js/jquery/easing.min.js',
         'images/bg/2-1.jpg',
@@ -90,3 +90,6 @@ function log(message, ...data) {
     }
 }
 console.log("foo");
+
+
+
