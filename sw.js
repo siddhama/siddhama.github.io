@@ -1,17 +1,9 @@
 
-const VERSION = 'v4';
+const VERSION = 'v1';
 
 
 self.addEventListener('install', event => event.waitUntil(installServiceWorker()));
-
-
-async function installServiceWorker() {
-
-    log("Service Worker installation started ");
-
-    const cache = await caches.open(getCacheName());
-
-    return cache.addAll([
+var cachedData=[
         '/',
         'index.html',
         'about.html',
@@ -33,14 +25,24 @@ async function installServiceWorker() {
         'js/popper.min.js',
         'js/morphext.min.js',
         'js/jquery.min.js',
-        'js/jquery/easing.min.js'
-        /*'images/bg/2-1.jpg',
+        'js/jquery.easing.min.js',
+        'images/bg/2-1.jpg',
         'images/bg/prasher3.jpg',
         'images/bg/8-1.jpg',
         'images/bg/5-1.jpg',
         'images/bg/prashar.jpg',
-        'images/bg/mtb4.jpg'*/
-    ]);
+        'images/bg/mtb4.jpg'
+    ];
+
+async function installServiceWorker() {
+
+    log("Service Worker installation started ");
+
+    const cache = await caches.open(getCacheName());
+
+    return Promise.all(
+        cachedData.map(function(url){cache.add(url)})
+      );
 }
 
 self.addEventListener('activate', () => activateSW());
@@ -103,3 +105,4 @@ function log(message, ...data) {
         console.log(VERSION, message);
     }
 }
+
