@@ -28,5 +28,4 @@ var slider = setInterval(function() {
   document.getElementsByClassName('header')[0].setAttribute('style', 'background-image: url("'+images[0]+'")');
   images.splice(images.length, 0, images[0]);
   images.splice(0, 1);
-  //document.write("hello eorld");
 }, 2000);

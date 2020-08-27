@@ -1,16 +1,20 @@
-const VERSION = 'v2';
 
-self.addEventListener('install', event => event.waitUntill(installServiceWorker));
+const VERSION = 'v4';
+
+
+self.addEventListener('install', event => event.waitUntil(installServiceWorker()));
 
 
 async function installServiceWorker() {
-    console.log("Service Worker installation started");
+
+    log("Service Worker installation started ");
+
     const cache = await caches.open(getCacheName());
+
     return cache.addAll([
         '/',
         'index.html',
         'about.html',
-        'index.html',
         'pastrides.html',
         'resources.html',
         'team.html',
@@ -29,19 +33,18 @@ async function installServiceWorker() {
         'js/popper.min.js',
         'js/morphext.min.js',
         'js/jquery.min.js',
-        'js/jquery/easing.min.js',
-        'images/bg/2-1.jpg',
+        'js/jquery/easing.min.js'
+        /*'images/bg/2-1.jpg',
         'images/bg/prasher3.jpg',
         'images/bg/8-1.jpg',
         'images/bg/5-1.jpg',
         'images/bg/prashar.jpg',
-        'images/bg/mtb4.jpg'
+        'images/bg/mtb4.jpg'*/
     ]);
 }
 
-
-
 self.addEventListener('activate', () => activateSW());
+
 
 async function activateSW() {
 
@@ -54,9 +57,13 @@ async function activateSW() {
             caches.delete(cacheKey);
         }
     });
+
 }
 
+
 self.addEventListener('fetch', event => event.respondWith(cacheThenNetwork(event)));
+
+
 
 async function cacheThenNetwork(event) {
 
@@ -74,7 +81,14 @@ async function cacheThenNetwork(event) {
     log('Calling network: ' + event.request.url);
 
     return networkResponse;
+
+
 }
+
+
+
+
+
 
 function getCacheName() {
     return "app-cache-" + VERSION;
@@ -88,8 +102,6 @@ function log(message, ...data) {
     else {
         console.log(VERSION, message);
     }
+
 }
-console.log("foo");
-
-
 
