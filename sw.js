@@ -102,4 +102,6 @@ function log(message, ...data) {
     else {
         console.log(VERSION, message);
     }
+
 }
+
