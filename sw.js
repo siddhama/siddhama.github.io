@@ -25,8 +25,13 @@ var cachedData=[
         'js/popper.min.js',
         'js/morphext.min.js',
         'js/jquery.min.js',
+
         'js/jquery.easing.min.js',
         'images/bg/2-1.jpg',
+
+        'js/jquery.easing.min.js',
+        'images/bg/2-1.jpg',
+
         'images/bg/prasher3.jpg',
         'images/bg/8-1.jpg',
         'images/bg/5-1.jpg',
@@ -104,5 +109,6 @@ function log(message, ...data) {
     else {
         console.log(VERSION, message);
     }
+
 }
 
