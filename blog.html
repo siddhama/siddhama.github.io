@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js" integrity="sha512-4ze/a9/4jqu+tX9dfOqJYSvyYd5M6qum/3HpCLr+/Jqf0whc37VUbkpNGHR7/8pSnCFw47T1fmIpwBV7UySh3g==" crossorigin="anonymous"></script>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- SEO Meta Tags -->
@@ -92,150 +92,51 @@
       <!-- end of navbar -->
       <!-- Header -->
       <style media="screen">
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 10% -30%; 
-        background-attachment: fixed;
-        canvas {
-        border: 1px solid black;
-        direction: ltr;
-    }
+         .header { 
+         background-image: url('images/bg/prasher3.jpg');
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position: 85% top;
+         background-attachment: fixed;
+         }
       </style>
-      <header id="header" class="header"  style="background-image: url('images/bg/prasher3.jpg');background-attachment: fixed;clear:both !important;height:100%">
-            <div class="card-overlay" style="height:100%;">
-                <div class="header-content">           
-                    <h1 style="position:absolute;bottom:20%; left:30% ;">BLOGS </h1>              
-                </div>
-                <!-- end of header-content -->
+      <header id="header" class="header"  style="background-attachment: fixed;clear:both !important;height:100%">
+         <div class="card-overlay" style="height:100%;">
+            <div class="header-content">
+               <h1 style="position:absolute;bottom:20%; left:30% ;">BLOGS </h1>
             </div>
-        </header>
-      
-      <div id="pdf-container" style="margin: 30px 5%;">
-        <h2 style="color:black"> बर्फ के पहिए <h2><h4 style="color:#333333"><i>&nbsp;&nbsp;-Abhishek Singh Kulhadiya<i></h4>
-         <canvas id="the-canvas" src="blogs/barf_k_phiye_2016 version.pdf";"></canvas>
-         <div>
-            <button id="prev">Previous Page</button>
-            <button id="next">Next Page </button>
-            &nbsp; &nbsp;
-            <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+            <!-- end of header-content -->
          </div>
+      </header>
+      <style>
+         .pdfobject-container { height: 100vh; border: 1rem solid rgba(0,0,0,.1); }
+         #blog-container{
+         display:block;
+         margin:auto;
+         max-width:750px;
+         margin-top:30px;
+         margin-bottom:30px;
+         }
+      </style>
+      <div id="blog-container">
+         <h2 style="color:black;"> बर्फ के पहिए </h2>
+         <h4  style="color:#333333;"><i>&nbsp;&nbsp;-Abhishek Singh Kulhadiya<i></h4>
+         <div id="blog1"></div>
+         <script>PDFObject.embed("blogs/barf_k_phiye_2016 version.pdf", "#blog1");</script>
+         <!-- Scripts -->
       </div>
-      <script>
-         // If absolute URL from the remote server is provided, configure the CORS
-         // header on that server.
-         //var url = 'blogs/barf_k_phiye_2016 version.pdf';
-         var url= document.getElementById("the-canvas").getAttribute("src"); 
-         
-         // Loaded via <script> tag, create shortcut to access PDF.js exports.
-         var pdfjsLib = window['pdfjs-dist/build/pdf'];
-         
-         // The workerSrc property shall be specified.
-         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
-         
-         var pdfDoc = null,
-         pageNum = 1,
-         pageRendering = false,
-         pageNumPending = null,
-         scale = 0.8,
-         canvas = document.getElementById('the-canvas'),
-         ctx = canvas.getContext('2d');
-         
-         /**
-         * Get page info from document, resize canvas accordingly, and render page.
-         * @param num Page number.
-         */
-         function renderPage(num) {
-         pageRendering = true;
-         // Using promise to fetch the page
-         pdfDoc.getPage(num).then(function(page) {
-         var viewport = page.getViewport({scale: scale});
-         canvas.height = viewport.height;
-         canvas.width = viewport.width;
-         
-         // Render PDF page into canvas context
-         var renderContext = {
-           canvasContext: ctx,
-           viewport: viewport
-         };
-         var renderTask = page.render(renderContext);
-         
-         // Wait for rendering to finish
-         renderTask.promise.then(function() {
-           pageRendering = false;
-           if (pageNumPending !== null) {
-             // New page rendering is pending
-             renderPage(pageNumPending);
-             pageNumPending = null;
-           }
-         });
-         });
-         
-         // Update page counters
-         document.getElementById('page_num').textContent = num;
-         }
-         
-         /**
-         * If another page rendering in progress, waits until the rendering is
-         * finised. Otherwise, executes rendering immediately.
-         */
-         function queueRenderPage(num) {
-         if (pageRendering) {
-         pageNumPending = num;
-         } else {
-         renderPage(num);
-         }
-         }
-         
-         /**
-         * Displays previous page.
-         */
-         function onPrevPage() {
-         if (pageNum <= 1) {
-         return;
-         }
-         pageNum--;
-         queueRenderPage(pageNum);
-         }
-         document.getElementById('prev').addEventListener('click', onPrevPage);
-         
-         /**
-         * Displays next page.
-         */
-         function onNextPage() {
-         if (pageNum >= pdfDoc.numPages) {
-         return;
-         }
-         pageNum++;
-         queueRenderPage(pageNum);
-         }
-         document.getElementById('next').addEventListener('click', onNextPage);
-         
-         /**
-         * Asynchronously downloads PDF.
-         */
-         pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-         pdfDoc = pdfDoc_;
-         document.getElementById('page_count').textContent = pdfDoc.numPages;
-         
-         // Initial/first page rendering
-         renderPage(pageNum);
-         });
-      </script>
-      <embed src="https://drive.google.com/viewerng/
-viewer?embedded=true&url=blogs/barf_k_phiye_2016 version.pdf" width="500" height="375">
-      <div class="copyright"> 
+      <div class="copyright">
          <div class="container">
-            <div class="row">
-               <div class="col-lg-12">
-                  <p class="p-small"> © 2020 MTB IIT Mandi</p>
-               </div>
-               <!-- end of col --> 
-            </div>
-            <!-- enf of row -->
+             <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small"> © 2020 MTB IIT Mandi</p>
+                </div>
+                 <!-- end of col -->
+             </div>
+                <!-- enf of row -->
          </div>
-         <!-- end of container -->
+            <!-- end of container -->
       </div>
-      <!-- Scripts -->
       <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
       <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
       <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
