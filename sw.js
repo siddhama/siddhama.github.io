@@ -1,5 +1,5 @@
 
-const VERSION = 'v1.0';
+const VERSION = 'v1.1';
 
 
 self.addEventListener('install', event => event.waitUntil(installServiceWorker()));
